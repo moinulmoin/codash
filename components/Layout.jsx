@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
 					{/* Navigation starts */}
 					<Navbar show={showMobileMenu} setShow={setShowMobileMenu} />
 					{/* Navigation ends */}
-					<div className='container mx-auto px-4 py-10'>
+					<div className='container mx-auto px-4 py-10 2xl:px-10'>
 						<div className='w-full h-full rounded'>
 							{/* Page content here */}
 							{children}

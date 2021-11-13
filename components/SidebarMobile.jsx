@@ -28,6 +28,7 @@ const SidebarMobile = ({ show, setShow }) => {
 								<XIcon className='w-5 h-5 absolute top-0 right-0 mr-2 mt-2 cursor-pointer' />
 							</div>
 						</div>
+						<div className='mb-10' />
 						<SidebarNav />
 					</div>
 					<div className='w-full'>

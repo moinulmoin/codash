@@ -1,5 +1,14 @@
+import DataTable from '../components/DataTable';
+import SearchBar from '../components/SearchBar';
+
 const overview = () => {
-	return <div>It's the overview page</div>;
+	return (
+		<>
+			<SearchBar />
+			<div className='mt-10' />
+			<DataTable />
+		</>
+	);
 };
 
 export default overview;
