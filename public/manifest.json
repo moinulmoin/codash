@@ -3,7 +3,7 @@
 	"background_color": "#ffffff",
 	"display": "standalone",
 	"scope": "/",
-	"start_url": "/",
+	"start_url": "/overview",
 	"name": "Covid-19 Dashboard",
 	"short_name": "Codash",
 	"description": "this a nextjs pwa app",
