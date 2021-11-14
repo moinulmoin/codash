@@ -1,6 +1,6 @@
 import { MenuAlt1Icon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
-import UserPanel from './UserPanel';
+import UserPanel from '../UserPanel';
 
 const Navbar = ({ show, setShow }) => {
 	const router = useRouter();

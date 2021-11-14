@@ -1,4 +1,5 @@
 import DataTable from '../components/DataTable';
+import Pagination from '../components/Pagination';
 import SearchBar from '../components/SearchBar';
 
 const overview = () => {
@@ -7,6 +8,8 @@ const overview = () => {
 			<SearchBar />
 			<div className='mt-10' />
 			<DataTable />
+			<div className='mt-10' />
+			<Pagination />
 		</>
 	);
 };

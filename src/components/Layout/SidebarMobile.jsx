@@ -1,7 +1,7 @@
 import { XIcon } from '@heroicons/react/outline';
-import Logo from './Logo';
-import SidebarNav from './SidebarNav';
-import UserPanel from './UserPanel';
+import Logo from '../Logo';
+import SidebarNav from '../DataTable/SidebarNav';
+import UserPanel from '../UserPanel';
 
 const SidebarMobile = ({ show, setShow }) => {
 	return (

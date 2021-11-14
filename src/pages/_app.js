@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import Layout from '../components/Layout';
-import store from '../store';
+import store from '../app/store';
 import '../styles/global.css';
 
 function MyApp({ Component, pageProps }) {
