@@ -2,7 +2,7 @@
 	"theme_color": "#4a90e2",
 	"background_color": "#ffffff",
 	"display": "standalone",
-	"scope": "/",
+	"scope": "/overview",
 	"start_url": "/overview",
 	"name": "Covid-19 Dashboard",
 	"short_name": "Codash",
