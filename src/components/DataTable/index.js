@@ -8,7 +8,10 @@ import DataTableHeader from './DataTableHeader';
 import DataTableRow from './DataTableRow';
 
 const DataTable = () => {
-	const { data, isLoading, isError } = useGetAllCountriesQuery();
+	const { data, isLoading, isError } = useGetAllCountriesQuery({
+		pollingInterval: 900000,
+	});
+
 	const { searchTerm, covidData, currentPage, pageSize } = useSelector(
 		(state) => state.overview
 	);
@@ -16,19 +19,30 @@ const DataTable = () => {
 
 	useEffect(() => {
 		if (data && searchTerm) {
-			const filtered = data.filter((country) =>
+			const filtered = data.response.filter((country) =>
 				country.country.toLowerCase().includes(searchTerm.toLowerCase())
 			);
 			dispatch(getCovidData(filtered));
+			return;
 		}
 		if (data && !searchTerm) {
-			dispatch(getCovidData(data));
+			dispatch(getCovidData(data.response));
 		}
 	}, [data, searchTerm]);
 
 	const startIndex = (currentPage - 1) * pageSize;
 	const endIndex = currentPage * pageSize;
 	const paginatedData = covidData.slice(startIndex, endIndex);
+
+	if (isError) {
+		return (
+			<section>
+				<h1 className='text-4xl text-center text-red-500'>
+					Something is wrong with API
+				</h1>
+			</section>
+		);
+	}
 
 	return (
 		<section className='w-full border-collapse'>
@@ -37,8 +51,7 @@ const DataTable = () => {
 			</p>
 			<DataTableHeader />
 			{isLoading && <Spinners />}
-			{paginatedData &&
-				paginatedData.length > 0 &&
+			{paginatedData.length > 0 &&
 				paginatedData.map((eachCountry) => (
 					<DataTableRow {...eachCountry} key={nanoid()} />
 				))}
